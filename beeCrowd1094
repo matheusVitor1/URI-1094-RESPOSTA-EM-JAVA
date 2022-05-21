@@ -1,0 +1,47 @@
+import java.io.IOException;
+import java.util.Scanner;
+
+public class Main {
+ 
+    public static void main(String[] args) throws IOException {
+
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        int qtdCobaia, qtdTotal = 0;
+        int qtdCoelhos = 0, qtdRato = 0, qtdSapos = 0;
+        char tipoCobaia;
+        
+        for(int i = 0; i < n; i++){
+            qtdCobaia = sc.nextInt();
+            tipoCobaia = sc.next().charAt(0);
+            qtdTotal = qtdTotal + qtdCobaia;
+         
+            if(tipoCobaia == 'C' || tipoCobaia == 'c'){                
+                qtdCoelhos = qtdCoelhos + qtdCobaia;
+            
+            }else if (tipoCobaia == 'R' || tipoCobaia == 'r'){
+            
+                qtdRato = qtdRato + qtdCobaia;
+            
+            }else if (tipoCobaia == 'S' || tipoCobaia == 's'){
+            
+                qtdSapos = qtdSapos + qtdCobaia;
+            
+            }           
+           
+                   
+        }
+         
+        
+        System.out.println("Total: " + qtdTotal + " cobaias");
+        System.out.println("Total de coelhos: " + qtdCoelhos);
+        System.out.println("Total de ratos: " + qtdRato);
+        System.out.println("Total de sapos: " + qtdSapos);
+        
+        System.out.println("Percentual de coelhos: " + String.format("%.2f", ( (double) qtdCoelhos / qtdTotal) * 100) + " %");
+        System.out.println("Percentual de ratos: " + String.format("%.2f", ( (double) qtdRato / qtdTotal) * 100) + " %");
+        System.out.println("Percentual de sapos: " + String.format("%.2f", ( (double) qtdSapos / qtdTotal) * 100) + " %");  
+
+    }
+ 
+}
